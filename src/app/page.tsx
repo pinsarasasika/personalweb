@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Globe, Youtube, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Globe, Youtube, Instagram, Linkedin, Mail, Heart, Briefcase, Github, Rss, Rocket } from 'lucide-react';
 import { TikTokIcon, WhatsAppIcon } from '@/components/icons';
 
 const links = [
@@ -8,6 +8,11 @@ const links = [
   { href: 'https://www.instagram.com/uixel.tech/', text: 'Instagram', icon: <Instagram className="size-5 shrink-0" /> },
   { href: 'https://www.tiktok.com/@uixel.tech', text: 'TikTok', icon: <TikTokIcon className="size-5 shrink-0" /> },
   { href: 'https://www.linkedin.com/in/pinsarasasika', text: 'LinkedIn', icon: <Linkedin className="size-5 shrink-0" /> },
+  { href: '#', text: 'Support Me', icon: <Heart className="size-5 shrink-0" /> },
+  { href: '#', text: 'Portfolio', icon: <Briefcase className="size-5 shrink-0" /> },
+  { href: 'https://github.com/pinsarasasika', text: 'GitHub', icon: <Github className="size-5 shrink-0" /> },
+  { href: '#', text: 'Blog', icon: <Rss className="size-5 shrink-0" /> },
+  { href: 'https://xel.ai', text: 'xel.ai', icon: <Rocket className="size-5 shrink-0" /> },
   { href: 'https://wa.me/94765114442', text: 'WhatsApp', icon: <WhatsAppIcon className="size-5 shrink-0" /> },
   { href: 'mailto:uixel.tech@gmail.com', text: 'Email', icon: <Mail className="size-5 shrink-0" /> },
 ];
@@ -42,7 +47,7 @@ export default function Home() {
               <a
                 key={link.href}
                 href={link.href}
-                target={link.href.startsWith('mailto:') ? '_self' : '_blank'}
+                target={link.href.startsWith('mailto:') || link.href.startsWith('#') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
                 className="group flex w-full items-center rounded-md border border-border bg-card p-3 text-left transition-all duration-200 ease-in-out hover:scale-[1.02] hover:border-accent hover:bg-accent/5 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-background"
               >
