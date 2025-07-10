@@ -45,7 +45,7 @@ export default function Home() {
           <div className="w-full space-y-3 pt-2">
             {links.map((link) => (
               <a
-                key={link.href}
+                key={link.text}
                 href={link.href}
                 target={link.href.startsWith('mailto:') || link.href.startsWith('#') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
