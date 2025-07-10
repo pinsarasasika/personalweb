@@ -19,8 +19,13 @@ const links = [
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh w-full flex-col items-center justify-center bg-background font-body text-foreground">
-      <div className="flex w-full flex-1 flex-col items-center justify-center p-4">
+    <div 
+      className="relative flex min-h-dvh w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat font-body text-foreground"
+      style={{ backgroundImage: "url('https://placehold.co/1920x1080.png')" }}
+      data-ai-hint="abstract background"
+    >
+      <div className="absolute inset-0 bg-black/50 z-0" />
+      <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-center p-4">
         <main className="w-full max-w-sm space-y-6 text-center">
           <div className="flex flex-col items-center space-y-4">
             <Image
@@ -49,7 +54,7 @@ export default function Home() {
                 href={link.href}
                 target={link.href.startsWith('mailto:') || link.href.startsWith('#') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
-                className="group flex w-full items-center rounded-md border border-border bg-card p-3 text-left transition-all duration-200 ease-in-out hover:scale-[1.02] hover:border-accent hover:bg-accent/5 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-background"
+                className="group flex w-full items-center rounded-md border border-border bg-card/80 backdrop-blur-sm p-3 text-left transition-all duration-200 ease-in-out hover:scale-[1.02] hover:border-accent hover:bg-accent/20 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-background"
               >
                 <div className="flex w-10 items-center justify-center text-muted-foreground transition-colors group-hover:text-accent">
                   {link.icon}
@@ -69,7 +74,7 @@ export default function Home() {
         </main>
       </div>
 
-      <footer className="w-full p-4 text-center text-xs text-muted-foreground">
+      <footer className="relative z-10 w-full p-4 text-center text-xs text-muted-foreground">
         Made with ❤️ by Pinsara Sasika
       </footer>
     </div>
